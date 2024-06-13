@@ -1,20 +1,20 @@
 ; Definición de pines y variables
-.equ RED_LED, 2
-.equ GREEN_LED, 3
-.equ YELLOW_LED, 4
-.equ BUZZER, 5
-.equ SENSOR1, 6
-.equ SENSOR2, 7
-.equ SENSOR3, 8
+.equ RED_LED, 10        #Se asigna el puerto 10 al LED rojo        
+.equ GREEN_LED, 11      #Se asigna el puerto 11 al LED verde       
+.equ YELLOW_LED, 12     #Se asigna el puerto 12 al LED amarillo
+.equ BUZZER,            #Se asigna el puerto    al buzzer
+.equ SENSOR1, A1        #Se asigna el puerto analogico 1 al sensor1
+.equ SENSOR2, A2        #Se asigna el puerto analogico 2 al sensor2
+.equ SENSOR3, A3        #Se asigna el puerto analogico 3 al sensor3
 
-.equ ROW1, 9
-.equ ROW2, 10
-.equ ROW3, 11
-.equ ROW4, 12
-.equ COL1, 13
-.equ COL2, A0
-.equ COL3, A1
-.equ COL4, A2
+.equ ROW1, 9            #Se asiga el puerto
+.equ ROW2, 8
+.equ ROW3, 7
+.equ ROW4, 6
+.equ COL1, 5
+.equ COL2, 4
+.equ COL3, 3
+.equ COL4, 2
 
 .equ CORRECT_CODE, 123  ; Código de activación/desactivación
 
