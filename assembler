@@ -1,0 +1,48 @@
+; Definición de pines y variables
+.equ RED_LED, 2
+.equ GREEN_LED, 3
+.equ YELLOW_LED, 4
+.equ BUZZER, 5
+.equ SENSOR1, 6
+.equ SENSOR2, 7
+.equ SENSOR3, 8
+
+.equ ROW1, 9
+.equ ROW2, 10
+.equ ROW3, 11
+.equ ROW4, 12
+.equ COL1, 13
+.equ COL2, A0
+.equ COL3, A1
+.equ COL4, A2
+
+.equ CORRECT_CODE, 123  ; Código de activación/desactivación
+
+.def temp = r16
+.def key = r17
+.def code = r18
+
+; Inicialización
+init:
+    ldi temp, 0b00001111  ; Configuramos filas del teclado como entradas y columnas como salidas
+    out DDRD, temp
+
+    ldi temp, 0b11110000  ; Configuramos pines de los LEDs y el buzzer como salidas
+    out DDRB, temp
+
+    ldi temp, 0b00000111  ; Configuramos pines de los sensores como entradas
+    out DDRC, temp
+
+    ; Inicializamos LEDs
+    sbi PORTB, RED_LED
+    cbi PORTB, GREEN_LED
+    cbi PORTB, YELLOW_LED
+    cbi PORTB, BUZZER
+
+    rjmp main
+
+main:
+    ; Lógica principal aquí
+    ; Leemos el teclado, verificamos código, activamos/desactivamos alarma, etc.
+
+    rjmp main
