@@ -1,4 +1,4 @@
-; Definición de pines y variables
+#Definición de pines y variables
 .equ RED_LED, 10        #Se asigna el puerto 10 al LED rojo        
 .equ GREEN_LED, 11      #Se asigna el puerto 11 al LED verde       
 .equ YELLOW_LED, 12     #Se asigna el puerto 12 al LED amarillo
@@ -7,33 +7,33 @@
 .equ SENSOR2, A2        #Se asigna el puerto analogico 2 al sensor2
 .equ SENSOR3, A3        #Se asigna el puerto analogico 3 al sensor3
 
-.equ ROW1, 9            #Se asiga el puerto
-.equ ROW2, 8
-.equ ROW3, 7
-.equ ROW4, 6
-.equ COL1, 5
-.equ COL2, 4
-.equ COL3, 3
-.equ COL4, 2
+.equ ROW1, 9            #Se asigna el puerto 9 al conector L1 del teclado 4x4
+.equ ROW2, 8            #Se asigna el puerto 8 al conector L2 del teclado 4x4
+.equ ROW3, 7            #Se asigna el puerto 7 al conector L3 del teclado 4x4
+.equ ROW4, 6            #Se asigna el puerto 6 al conector L4 del teclado 4x4
+.equ COL1, 5            #Se asigna el puerto 5 al conector C1 del teclado 4x4
+.equ COL2, 4            #Se asigna el puerto 4 al conector C2 del teclado 4x4
+.equ COL3, 3            #Se asigna el puerto 3 al conector C3 del teclado 4x4
+.equ COL4, 2            #Se asigna el puerto 2 al conector C4 del teclado 4x4
 
-.equ CORRECT_CODE, 123  ; Código de activación/desactivación
+.equ CORRECT_CODE, 123  #Código de activación/desactivación
 
 .def temp = r16
 .def key = r17
 .def code = r18
 
-; Inicialización
+#Inicialización
 init:
-    ldi temp, 0b00001111  ; Configuramos filas del teclado como entradas y columnas como salidas
+    ldi temp, 0b00001111  #Configuramos filas del teclado como entradas y columnas como salidas
     out DDRD, temp
 
-    ldi temp, 0b11110000  ; Configuramos pines de los LEDs y el buzzer como salidas
+    ldi temp, 0b11110000  #Configuramos pines de los LEDs y el buzzer como salidas
     out DDRB, temp
 
-    ldi temp, 0b00000111  ; Configuramos pines de los sensores como entradas
+    ldi temp, 0b00000111  #Configuramos pines de los sensores como entradas
     out DDRC, temp
 
-    ; Inicializamos LEDs
+#Inicializamos LEDs
     sbi PORTB, RED_LED
     cbi PORTB, GREEN_LED
     cbi PORTB, YELLOW_LED
@@ -42,7 +42,7 @@ init:
     rjmp main
 
 main:
-    ; Lógica principal aquí
-    ; Leemos el teclado, verificamos código, activamos/desactivamos alarma, etc.
-
+    
+    #Lógica principal en lenguaje C
+    
     rjmp main
